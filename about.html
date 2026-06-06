@@ -53,6 +53,12 @@
             border-radius: 50%;
             border: 3px solid var(--accent);
             object-fit: cover;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logo-small:hover {
+            transform: scale(1.05);
         }
 
         .flags {
@@ -144,14 +150,13 @@
 
     <!-- TOP BAR -->
     <div class="topbar">
-        <img src="logo.jpg" class="logo-small" alt="Logo">
+
+        <!-- ✅ CLICKABLE LOGO FIX -->
+        <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
 
         <div class="flags">
-            <img src="https://flagcdn.com/48x36/gr.png"
-                 onclick="switchLang('el')" alt="Ελληνικά">
-
-            <img src="https://flagcdn.com/48x36/gb.png"
-                 onclick="switchLang('en')" alt="English">
+            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Ελληνικά">
+            <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
         </div>
     </div>
 
@@ -204,10 +209,14 @@
     </footer>
 
     <script>
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+
         function switchLang(lang) {
             if (lang === 'en') {
                 window.location.href = 'about-en.html';
-            } else if (lang === 'el') {
+            } else {
                 window.location.href = 'about.html';
             }
         }
