@@ -1,226 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Us - AM & AR Construction LTD</title>
+<title>About Us - AM & AR Construction LTD</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #0a1625;
-            --accent: #d4af37;
-            --light: #f5f7fa;
-        }
+<style>
+:root {
+    --primary: #0a1625;
+    --accent: #d4af37;
+    --light: #f5f7fa;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html, body {
-            height: 100%;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: #333;
+    line-height: 1.7;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--light);
-            color: #333;
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-        }
+/* SAME TOPBAR AS INDEX */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10,22,37,.96);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.25);
+}
 
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10,22,37,.96);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            box-shadow: 0 3px 15px rgba(0,0,0,.25);
-        }
+.logo-small {
+    width: 70px;      /* FIXED to match index */
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .logo-small {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            object-fit: cover;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.logo-small:hover {
+    transform: scale(1.05);
+}
 
-        .logo-small:hover {
-            transform: scale(1.05);
-        }
+.flags {
+    display: flex;
+    gap: 12px;
+}
 
-        .flags {
-            display: flex;
-            gap: 12px;
-        }
+.flags img {
+    width: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
 
-        .flags img {
-            width: 42px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: .3s;
-        }
+.flags img:hover {
+    transform: translateY(-3px) scale(1.05);
+}
 
-        .flags img:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
+.header {
+    text-align: center;
+    padding: 70px 20px 30px;
+}
 
-        .header {
-            text-align: center;
-            padding: 70px 20px 30px;
-        }
+.header h1 {
+    font-size: 2.8rem;
+    color: var(--primary);
+}
 
-        .header h1 {
-            font-size: 2.8rem;
-            color: var(--primary);
-        }
+.header p {
+    margin-top: 10px;
+    color: #666;
+}
 
-        .header p {
-            margin-top: 10px;
-            color: #666;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            flex: 1;
-        }
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
 
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,.08);
-        }
+.badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 
-        .badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+h2 {
+    margin-top: 25px;
+    color: var(--primary);
+}
 
-        h2 {
-            margin-top: 25px;
-            color: var(--primary);
-        }
+p {
+    margin-top: 15px;
+    color: #444;
+}
 
-        p {
-            margin-top: 15px;
-            color: #444;
-        }
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
 
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: auto;
-        }
-
-        @media(max-width:768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .card {
-                padding: 25px;
-            }
-        }
-    </style>
+@media(max-width:768px) {
+    .header h1 { font-size: 2rem; }
+    .card { padding: 25px; }
+    .topbar { padding: 15px 20px; }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
-    <div class="topbar">
+<!-- TOP BAR -->
+<div class="topbar">
 
-        <!-- ✅ CLICKABLE LOGO FIX -->
-        <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
+    <!-- FIXED LOGO -->
+    <img src="logo.jpg" class="logo-small" onclick="goHome()" alt="Logo">
 
-        <div class="flags">
-            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
-            <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
-        </div>
+    <div class="flags">
+        <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
+        <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
     </div>
+</div>
 
-    <!-- HEADER -->
-    <div class="header">
-        <h1>About Us</h1>
-        <p>Our history, values and vision</p>
-    </div>
+<!-- HEADER -->
+<div class="header">
+    <h1>About Us</h1>
+    <p>Our history, values and vision</p>
+</div>
 
-    <!-- CONTENT -->
-    <div class="container">
+<!-- CONTENT -->
+<div class="container">
+    <div class="card">
 
-        <div class="card">
+        <div class="badge">WE BUILD YOUR FUTURE</div>
 
-            <div class="badge">WE BUILD YOUR FUTURE</div>
+        <h2>AM & AR Construction LTD</h2>
 
-            <h2>AM & AR Construction LTD</h2>
+        <p>
+            AM & AR Construction Company was founded in 2019 by Amir Najem,
+            a Civil Engineer with over 25 years of experience in the construction industry.
+        </p>
 
-            <p>
-                AM & AR Construction Company was founded in 2019 by Amir Najem,
-                a Civil Engineer with over 25 years of experience in the construction industry.
-            </p>
+        <p>
+            We preserve the values passed down from previous generations and remain fully committed to construction quality, technical excellence, and outstanding customer service.
+        </p>
 
-            <p>
-                We preserve the values passed down from previous generations
-                and remain fully committed to construction quality,
-                technical excellence, and outstanding customer service.
-            </p>
+        <p>
+            We know that our success is based on the talent, experience, and dedication of our people.
+        </p>
 
-            <p>
-                We know that our success in general contracting and construction services
-                is always based on the talent, experience, and dedication of our people.
-            </p>
+        <h2>Our Vision</h2>
 
-            <h2>Our Vision</h2>
-
-            <p>
-                Our goal is to create high-quality projects that stand the test of time,
-                combining modern techniques with traditional craftsmanship.
-            </p>
-
-        </div>
+        <p>
+            Our goal is to create high-quality projects that stand the test of time.
+        </p>
 
     </div>
+</div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p><strong>AM & AR Construction LTD</strong></p>
-        <p>© 2026 All Rights Reserved</p>
-    </footer>
+<!-- FOOTER -->
+<footer>
+    <p><strong>AM & AR Construction LTD</strong></p>
+    <p>© 2026 All Rights Reserved</p>
+</footer>
 
-    <script>
-        function goHome() {
-            window.location.href = 'index.html';
-        }
+<script>
+function goHome() {
+    window.location.href = 'index-en.html'; // FIXED HOME TARGET
+}
 
-        function switchLang(lang) {
-            if (lang === 'en') {
-                window.location.href = 'about-en.html';
-            } else {
-                window.location.href = 'about.html';
-            }
-        }
-    </script>
+function switchLang(lang) {
+    if (lang === 'en') {
+        window.location.href = 'about-en.html';
+    } else {
+        window.location.href = 'about.html';
+    }
+}
+</script>
 
 </body>
 </html>
