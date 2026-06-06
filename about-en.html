@@ -28,7 +28,7 @@ body {
     line-height: 1.7;
 }
 
-/* SAME TOPBAR AS INDEX */
+/* TOP BAR (MATCHES INDEX EXACTLY) */
 .topbar {
     position: sticky;
     top: 0;
@@ -43,7 +43,7 @@ body {
 }
 
 .logo-small {
-    width: 70px;      /* FIXED to match index */
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     border: 3px solid var(--accent);
@@ -142,7 +142,7 @@ footer {
 <div class="topbar">
 
     <!-- FIXED LOGO -->
-    <img src="logo.jpg" class="logo-small" onclick="goHome()" alt="Logo">
+    <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
 
     <div class="flags">
         <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
@@ -193,10 +193,12 @@ footer {
 </footer>
 
 <script>
+/* FIXED HOME FUNCTION (GitHub Pages SAFE) */
 function goHome() {
-    window.location.href = 'index-en.html'; // FIXED HOME TARGET
+    window.location.href = './index.html';
 }
 
+/* LANGUAGE SWITCH */
 function switchLang(lang) {
     if (lang === 'en') {
         window.location.href = 'about-en.html';
