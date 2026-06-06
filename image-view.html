@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image View - AM & AR Construction LTD</title>
+
+    <style>
+        :root {
+            --primary: #0a1625;
+            --accent: #d4af37;
+        }
+
+        body {
+            margin: 0;
+            background: var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .image-container {
+            max-width: 95%;
+            max-height: 85vh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .home {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+            .home:hover {
+                opacity: 0.85;
+            }
+
+        .back {
+            background: white;
+            color: black;
+        }
+
+            .back:hover {
+                opacity: 0.8;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="image-container">
+        <img id="fullImage" src="" alt="Project Image">
+    </div>
+
+    <div class="buttons">
+        <button class="back" onclick="goBack()">← Back</button>
+        <button class="home" onclick="goHome()">🏠 Home</button>
+    </div>
+
+    <script>
+        // Get image from URL
+        const params = new URLSearchParams(window.location.search);
+        const img = params.get("img");
+
+        document.getElementById("fullImage").src = img;
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function goHome() {
+            window.location.href = "projects.html";
+        }
+    </script>
+
+</body>
+</html>
