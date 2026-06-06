@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Έργα μας - AM & AR Construction LTD</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a1625;
+            --accent: #d4af37;
+            --light: #f5f7fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins',sans-serif;
+            background: var(--light);
+            color: #333;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10,22,37,.96);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.25);
+        }
+
+        .logo-small {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .flags {
+            display: flex;
+            gap: 12px;
+        }
+
+            .flags img {
+                width: 42px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+                .flags img:hover {
+                    transform: translateY(-3px) scale(1.05);
+                }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+            .header h1 {
+                font-size: 2.6rem;
+                color: var(--primary);
+            }
+
+            .header p {
+                margin-top: 10px;
+                color: #666;
+            }
+
+        /* GALLERY */
+        .gallery {
+            max-width: 1200px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.08);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+                transition: .4s ease;
+            }
+
+            /* hover zoom effect */
+            .gallery-item:hover img {
+                transform: scale(1.08);
+            }
+
+            .gallery-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 18px 40px rgba(0,0,0,.15);
+            }
+
+        /* overlay label */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER STYLE (optional future reuse) */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .topbar {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <img src="/images/logo.jpg" class="logo-small" alt="Logo">
+
+        <div class="flags">
+            <img src="https://flagcdn.com/48x36/gr.png"
+                 onclick="switchLang('el')"
+                 alt="Ελληνικά">
+
+            <img src="https://flagcdn.com/48x36/gb.png"
+                 onclick="switchLang('en')"
+                 alt="English">
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Ολοκληρωμένα Έργα</h1>
+        <p>Μια συλλογή από τα πιο πρόσφατα κατασκευαστικά μας έργα</p>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="/images/Project(1).jpeg" alt="Project 1">
+            <div class="overlay">Έργο 1</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(2).jpeg" alt="Project 2">
+            <div class="overlay">Έργο 2</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(3).jpeg" alt="Project 3">
+            <div class="overlay">Έργο 3</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(4).jpeg" alt="Project 4">
+            <div class="overlay">Έργο 4</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(5).jpeg" alt="Project 5">
+            <div class="overlay">Έργο 5</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(6).jpeg" alt="Project 6">
+            <div class="overlay">Έργο 6</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(7).jpeg" alt="Project 7">
+            <div class="overlay">Έργο 7</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/images/Project(8).jpeg" alt="Project 8">
+            <div class="overlay">Έργο 8</div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            if (lang === 'en') {
+                window.location.href = 'projects-en.html';
+            } else if (lang === 'el') {
+                window.location.href = 'projects.html';
+            }
+        }
+    </script>
+
+</body>
+</html>
