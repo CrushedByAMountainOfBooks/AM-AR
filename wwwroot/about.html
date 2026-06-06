@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Σχετικά με εμάς - AM & AR Construction LTD</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0a1625;
+            --accent: #d4af37;
+            --light: #f5f7fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: #333;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10,22,37,.96);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 3px 15px rgba(0,0,0,.25);
+        }
+
+        .logo-small {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .flags {
+            display: flex;
+            gap: 12px;
+        }
+
+            .flags img {
+                width: 42px;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+                .flags img:hover {
+                    transform: translateY(-3px) scale(1.05);
+                }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 70px 20px 30px;
+        }
+
+            .header h1 {
+                font-size: 2.8rem;
+                color: var(--primary);
+            }
+
+            .header p {
+                margin-top: 10px;
+                color: #666;
+            }
+
+        /* CONTENT */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.08);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 25px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-top: 15px;
+            color: #444;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <img src="/images/logo.jpg" class="logo-small" alt="Logo">
+
+        <div class="flags">
+            <img src="https://flagcdn.com/48x36/gr.png"
+                 onclick="switchLang('el')" alt="Ελληνικά">
+
+            <img src="https://flagcdn.com/48x36/gb.png"
+                 onclick="switchLang('en')" alt="English">
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Σχετικά με εμάς</h1>
+        <p>Η ιστορία, οι αξίες και το όραμά μας</p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+
+        <div class="card">
+
+            <div class="badge">WE BUILD YOUR FUTURE</div>
+
+            <h2>AM & AR Construction LTD</h2>
+
+            <p>
+                Η AM & AR Construction Company ιδρύθηκε το 2019 από τον Amir Najem,
+                Πολιτικό Μηχανικό με πάνω από 25 χρόνια εμπειρίας στον κατασκευαστικό τομέα.
+            </p>
+
+            <p>
+                Διατηρούμε τις αξίες που μας κληροδότησαν οι προηγούμενες γενιές μας
+                και παραμένουμε απόλυτα αφοσιωμένοι στην ποιότητα κατασκευής,
+                την τεχνική αρτιότητα και την άριστη εξυπηρέτηση πελατών.
+            </p>
+
+            <p>
+                Γνωρίζουμε ότι η επιτυχία μας στις γενικές εργολαβίες και κατασκευαστικές υπηρεσίες
+                βασίζεται πάντα στο ταλέντο, την εμπειρία και τη δέσμευση των ανθρώπων μας.
+            </p>
+
+            <h2>Το Όραμά μας</h2>
+
+            <p>
+                Στόχος μας είναι να δημιουργούμε έργα υψηλής ποιότητας που αντέχουν στον χρόνο,
+                συνδυάζοντας σύγχρονες τεχνικές με παραδοσιακή τεχνογνωσία.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>AM & AR Construction LTD</strong></p>
+        <p>© 2026 All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            if (lang === 'en') {
+                window.location.href = 'about-en.html';
+            } else if (lang === 'el') {
+                window.location.href = 'about.html';
+            }
+        }
+    </script>
+
+</body>
+</html>
