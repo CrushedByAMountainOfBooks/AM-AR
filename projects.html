@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Έργα μας - AM & AR Construction LTD</title>
+    <title>Our Projects - AM & AR Construction LTD</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -46,12 +46,6 @@
             border-radius: 50%;
             border: 3px solid var(--accent);
             object-fit: cover;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .logo-small:hover {
-            transform: scale(1.05);
         }
 
         .flags {
@@ -106,7 +100,6 @@
         .gallery-item img {
             width: 100%;
             height: 100%;
-            display: block;
             object-fit: cover;
             transition: .4s ease;
         }
@@ -137,20 +130,18 @@
 
     <!-- TOP BAR -->
     <div class="topbar">
-
-        <!-- 🏠 CLICK LOGO -->
-        <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
+        <img src="logo.jpg" class="logo-small" alt="Logo">
 
         <div class="flags">
-            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Ελληνικά">
+            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
             <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
         </div>
     </div>
 
     <!-- HEADER -->
     <div class="header">
-        <h1>Ολοκληρωμένα Έργα</h1>
-        <p>Μια συλλογή από τα πιο πρόσφατα κατασκευαστικά μας έργα</p>
+        <h1>Completed Projects</h1>
+        <p>A collection of our latest construction work</p>
     </div>
 
     <!-- GALLERY -->
@@ -158,64 +149,57 @@
 
         <div class="gallery-item" onclick="openImage('Project(1).jpeg')">
             <img src="Project(1).jpeg" alt="Project 1">
-            <div class="overlay">Έργο 1</div>
+            <div class="overlay">Project 1</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(2).jpeg')">
             <img src="Project(2).jpeg" alt="Project 2">
-            <div class="overlay">Έργο 2</div>
+            <div class="overlay">Project 2</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(3).jpeg')">
             <img src="Project(3).jpeg" alt="Project 3">
-            <div class="overlay">Έργο 3</div>
+            <div class="overlay">Project 3</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(4).jpeg')">
             <img src="Project(4).jpeg" alt="Project 4">
-            <div class="overlay">Έργο 4</div>
+            <div class="overlay">Project 4</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(5).jpeg')">
             <img src="Project(5).jpeg" alt="Project 5">
-            <div class="overlay">Έργο 5</div>
+            <div class="overlay">Project 5</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(6).jpeg')">
             <img src="Project(6).jpeg" alt="Project 6">
-            <div class="overlay">Έργο 6</div>
+            <div class="overlay">Project 6</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(7).jpeg')">
             <img src="Project(7).jpeg" alt="Project 7">
-            <div class="overlay">Έργο 7</div>
+            <div class="overlay">Project 7</div>
         </div>
 
         <div class="gallery-item" onclick="openImage('Project(8).jpeg')">
             <img src="Project(8).jpeg" alt="Project 8">
-            <div class="overlay">Έργο 8</div>
+            <div class="overlay">Project 8</div>
         </div>
 
     </div>
 
     <script>
-        // 🏠 HOME BUTTON
-        function goHome() {
-            window.location.href = 'index.html';
+        function openImage(img) {
+            window.location.href = "image-view.html?img=" + encodeURIComponent(img);
         }
 
-        // 🌐 LANGUAGE SWITCH
         function switchLang(lang) {
             if (lang === 'en') {
                 window.location.href = 'projects-en.html';
-            } else {
+            } else if (lang === 'el') {
                 window.location.href = 'projects.html';
             }
-        }
-
-        // 🖼️ OPEN IMAGE IN VIEW PAGE
-        function openImage(img) {
-            window.location.href = "image-view.html?img=" + encodeURIComponent(img);
         }
     </script>
 
