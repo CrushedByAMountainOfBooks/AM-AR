@@ -1,207 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Projects - AM & AR Construction LTD</title>
+<title>Our Projects - AM & AR Construction LTD</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #0a1625;
-            --accent: #d4af37;
-            --light: #f5f7fa;
-        }
+<style>
+:root {
+    --primary: #0a1625;
+    --accent: #d4af37;
+    --light: #f5f7fa;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Poppins',sans-serif;
-            background: var(--light);
-            color: #333;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: #333;
+}
 
-        .topbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10,22,37,.96);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            box-shadow: 0 3px 15px rgba(0,0,0,.25);
-        }
+/* TOP BAR */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10,22,37,.96);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.25);
+}
 
-        .logo-small {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            object-fit: cover;
-        }
+.logo-small {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .flags {
-            display: flex;
-            gap: 12px;
-        }
+.logo-small:hover {
+    transform: scale(1.05);
+}
 
-        .flags img {
-            width: 42px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: .3s;
-        }
+.flags {
+    display: flex;
+    gap: 12px;
+}
 
-        .flags img:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
+.flags img {
+    width: 42px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+}
 
-        .header {
-            text-align: center;
-            padding: 60px 20px 20px;
-        }
+.flags img:hover {
+    transform: translateY(-3px) scale(1.05);
+}
 
-        .header h1 {
-            font-size: 2.6rem;
-            color: var(--primary);
-        }
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
 
-        .header p {
-            margin-top: 10px;
-            color: #666;
-        }
+.header h1 {
+    font-size: 2.6rem;
+    color: var(--primary);
+}
 
-        .gallery {
-            max-width: 1200px;
-            margin: 40px auto 80px;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-            gap: 25px;
-        }
+.header p {
+    margin-top: 10px;
+    color: #666;
+}
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,.08);
-            cursor: pointer;
-            transition: .3s;
-        }
+/* GALLERY */
+.gallery {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
+}
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: .4s ease;
-        }
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    cursor: pointer;
+    transition: .3s;
+}
 
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s ease;
+}
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 40px rgba(0,0,0,.15);
-        }
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
 
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 12px;
-            background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
-            color: white;
-            font-size: 0.95rem;
-        }
-    </style>
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0,0,0,.15);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
+    color: white;
+    font-size: 0.95rem;
+}
+
+@media(max-width:768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .topbar {
+        padding: 15px 20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <img src="logo.jpg" class="logo-small" alt="Logo">
+<!-- TOP BAR -->
+<div class="topbar">
 
-        <div class="flags">
-            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
-            <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
-        </div>
+    <!-- CLICKABLE HOME LOGO -->
+    <img src="logo.jpg"
+         class="logo-small"
+         alt="Logo"
+         onclick="goHome()">
+
+    <div class="flags">
+        <img src="https://flagcdn.com/48x36/gr.png"
+             onclick="switchLang('el')"
+             alt="Greek">
+
+        <img src="https://flagcdn.com/48x36/gb.png"
+             onclick="switchLang('en')"
+             alt="English">
     </div>
 
-    <!-- HEADER -->
-    <div class="header">
-        <h1>Completed Projects</h1>
-        <p>A collection of our latest construction work</p>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Completed Projects</h1>
+    <p>A collection of our latest construction work</p>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+
+    <div class="gallery-item" onclick="openImage('Project(1).jpeg')">
+        <img src="Project(1).jpeg" alt="Project 1">
+        <div class="overlay">Project 1</div>
     </div>
 
-    <!-- GALLERY -->
-    <div class="gallery">
-
-        <div class="gallery-item" onclick="openImage('Project(1).jpeg')">
-            <img src="Project(1).jpeg" alt="Project 1">
-            <div class="overlay">Project 1</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(2).jpeg')">
-            <img src="Project(2).jpeg" alt="Project 2">
-            <div class="overlay">Project 2</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(3).jpeg')">
-            <img src="Project(3).jpeg" alt="Project 3">
-            <div class="overlay">Project 3</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(4).jpeg')">
-            <img src="Project(4).jpeg" alt="Project 4">
-            <div class="overlay">Project 4</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(5).jpeg')">
-            <img src="Project(5).jpeg" alt="Project 5">
-            <div class="overlay">Project 5</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(6).jpeg')">
-            <img src="Project(6).jpeg" alt="Project 6">
-            <div class="overlay">Project 6</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(7).jpeg')">
-            <img src="Project(7).jpeg" alt="Project 7">
-            <div class="overlay">Project 7</div>
-        </div>
-
-        <div class="gallery-item" onclick="openImage('Project(8).jpeg')">
-            <img src="Project(8).jpeg" alt="Project 8">
-            <div class="overlay">Project 8</div>
-        </div>
-
+    <div class="gallery-item" onclick="openImage('Project(2).jpeg')">
+        <img src="Project(2).jpeg" alt="Project 2">
+        <div class="overlay">Project 2</div>
     </div>
 
-    <script>
-        function openImage(img) {
-            window.location.href = "image-view.html?img=" + encodeURIComponent(img);
-        }
+    <div class="gallery-item" onclick="openImage('Project(3).jpeg')">
+        <img src="Project(3).jpeg" alt="Project 3">
+        <div class="overlay">Project 3</div>
+    </div>
 
-        function switchLang(lang) {
-            if (lang === 'en') {
-                window.location.href = 'projects-en.html';
-            } else if (lang === 'el') {
-                window.location.href = 'projects.html';
-            }
-        }
-    </script>
+    <div class="gallery-item" onclick="openImage('Project(4).jpeg')">
+        <img src="Project(4).jpeg" alt="Project 4">
+        <div class="overlay">Project 4</div>
+    </div>
+
+    <div class="gallery-item" onclick="openImage('Project(5).jpeg')">
+        <img src="Project(5).jpeg" alt="Project 5">
+        <div class="overlay">Project 5</div>
+    </div>
+
+    <div class="gallery-item" onclick="openImage('Project(6).jpeg')">
+        <img src="Project(6).jpeg" alt="Project 6">
+        <div class="overlay">Project 6</div>
+    </div>
+
+    <div class="gallery-item" onclick="openImage('Project(7).jpeg')">
+        <img src="Project(7).jpeg" alt="Project 7">
+        <div class="overlay">Project 7</div>
+    </div>
+
+    <div class="gallery-item" onclick="openImage('Project(8).jpeg')">
+        <img src="Project(8).jpeg" alt="Project 8">
+        <div class="overlay">Project 8</div>
+    </div>
+
+</div>
+
+<script>
+
+function openImage(img) {
+    window.location.href =
+        "image-view.html?img=" + encodeURIComponent(img);
+}
+
+function goHome() {
+    window.location.href = "/AM-AR/index-en.html";
+}
+
+function switchLang(lang) {
+    if (lang === 'en') {
+        window.location.href = 'projects-en.html';
+    } else {
+        window.location.href = 'projects.html';
+    }
+}
+
+</script>
 
 </body>
 </html>
