@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Έργα μας - AM & AR Construction LTD</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --primary: #0a1625;
@@ -21,13 +18,19 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--light);
             color: #333;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* TOP BAR */
         .topbar {
             position: sticky;
             top: 0;
@@ -42,12 +45,17 @@
         }
 
         .logo-small {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             border: 3px solid var(--accent);
             object-fit: cover;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .logo-small:hover {
+            transform: scale(1.05);
         }
 
         .flags {
@@ -66,7 +74,6 @@
             transform: translateY(-3px) scale(1.05);
         }
 
-        /* HEADER */
         .header {
             text-align: center;
             padding: 60px 20px 20px;
@@ -82,14 +89,14 @@
             color: #666;
         }
 
-        /* GALLERY */
         .gallery {
             max-width: 1200px;
             margin: 40px auto 80px;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
+            flex: 1;
         }
 
         .gallery-item {
@@ -127,85 +134,86 @@
             color: white;
             font-size: 0.95rem;
         }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: auto;
+        }
+
+        @media(max-width:768px) {
+            .header h1 { font-size: 2rem; }
+            .topbar { padding: 15px 20px; }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
     <div class="topbar">
-        <!-- FIXED HOME BUTTON -->
         <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
-
         <div class="flags">
-            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
+            <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Ελληνικά">
             <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
         </div>
     </div>
 
-    <!-- HEADER -->
     <div class="header">
         <h1>Ολοκληρωμένα Έργα</h1>
         <p>Μια συλλογή από τα πιο πρόσφατα κατασκευαστικά μας έργα</p>
     </div>
 
-    <!-- GALLERY -->
     <div class="gallery">
-
         <div class="gallery-item" onclick="openImage('Project(1).jpeg')">
-            <img src="Project(1).jpeg">
+            <img src="Project(1).jpeg" alt="Έργο 1">
             <div class="overlay">Έργο 1</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(2).jpeg')">
-            <img src="Project(2).jpeg">
+            <img src="Project(2).jpeg" alt="Έργο 2">
             <div class="overlay">Έργο 2</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(3).jpeg')">
-            <img src="Project(3).jpeg">
+            <img src="Project(3).jpeg" alt="Έργο 3">
             <div class="overlay">Έργο 3</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(4).jpeg')">
-            <img src="Project(4).jpeg">
+            <img src="Project(4).jpeg" alt="Έργο 4">
             <div class="overlay">Έργο 4</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(5).jpeg')">
-            <img src="Project(5).jpeg">
+            <img src="Project(5).jpeg" alt="Έργο 5">
             <div class="overlay">Έργο 5</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(6).jpeg')">
-            <img src="Project(6).jpeg">
+            <img src="Project(6).jpeg" alt="Έργο 6">
             <div class="overlay">Έργο 6</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(7).jpeg')">
-            <img src="Project(7).jpeg">
+            <img src="Project(7).jpeg" alt="Έργο 7">
             <div class="overlay">Έργο 7</div>
         </div>
-
         <div class="gallery-item" onclick="openImage('Project(8).jpeg')">
-            <img src="Project(8).jpeg">
+            <img src="Project(8).jpeg" alt="Έργο 8">
             <div class="overlay">Έργο 8</div>
         </div>
-
     </div>
 
+    <footer>
+        <p><strong>AM & AR Construction LTD</strong></p>
+        <p>© 2026 All Rights Reserved</p>
+    </footer>
+
     <script>
-        // OPEN IMAGE VIEW PAGE
         function openImage(img) {
             window.location.href = "image-view.html?img=" + encodeURIComponent(img);
         }
 
-        // GO HOME FIX
         function goHome() {
             window.location.href = "index.html";
         }
 
-        // LANGUAGE SWITCH
         function switchLang(lang) {
             if (lang === 'en') {
                 window.location.href = 'projects-en.html';
