@@ -12,15 +12,9 @@
             --light: #f5f7fa;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html, body {
-            height: 100%;
-        }
+        html, body { height: 100%; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -54,14 +48,9 @@
             transition: 0.3s;
         }
 
-        .logo-small:hover {
-            transform: scale(1.05);
-        }
+        .logo-small:hover { transform: scale(1.05); }
 
-        .flags {
-            display: flex;
-            gap: 12px;
-        }
+        .flags { display: flex; gap: 12px; }
 
         .flags img {
             width: 42px;
@@ -70,31 +59,15 @@
             transition: .3s;
         }
 
-        .flags img:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
+        .flags img:hover { transform: translateY(-3px) scale(1.05); }
 
-        .header {
-            text-align: center;
-            padding: 70px 20px 30px;
-        }
+        .header { text-align: center; padding: 70px 20px 30px; }
 
-        .header h1 {
-            font-size: 2.8rem;
-            color: var(--primary);
-        }
+        .header h1 { font-size: 2.8rem; color: var(--primary); }
 
-        .header p {
-            margin-top: 10px;
-            color: #666;
-        }
+        .header p { margin-top: 10px; color: #666; }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            flex: 1;
-        }
+        .container { max-width: 1000px; margin: auto; padding: 20px; flex: 1; }
 
         .card {
             background: white;
@@ -113,15 +86,9 @@
             margin-bottom: 20px;
         }
 
-        h2 {
-            margin-top: 25px;
-            color: var(--primary);
-        }
+        h2 { margin-top: 25px; color: var(--primary); }
 
-        p {
-            margin-top: 15px;
-            color: #444;
-        }
+        p { margin-top: 15px; color: #444; }
 
         footer {
             background: var(--primary);
@@ -132,24 +99,15 @@
         }
 
         @media(max-width:768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .card {
-                padding: 25px;
-            }
-
-            .topbar {
-                padding: 15px 20px;
-            }
+            .header h1 { font-size: 2rem; }
+            .card { padding: 25px; }
+            .topbar { padding: 15px 20px; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
     <div class="topbar">
         <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
         <div class="flags">
@@ -158,13 +116,11 @@
         </div>
     </div>
 
-    <!-- HEADER -->
     <div class="header">
         <h1>About Us</h1>
         <p>Our story, values and vision</p>
     </div>
 
-    <!-- CONTENT -->
     <div class="container">
         <div class="card">
 
@@ -198,7 +154,6 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
         <p><strong>AM & AR Construction LTD</strong></p>
         <p>© 2026 All Rights Reserved</p>
@@ -206,7 +161,7 @@
 
     <script>
         function goHome() {
-            window.location.href = 'index.html';
+            window.location.href = 'index-en.html';
         }
 
         function switchLang(lang) {
