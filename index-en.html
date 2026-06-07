@@ -28,7 +28,6 @@
             color: #333;
         }
 
-        /* TOP BAR */
         .topbar {
             position: sticky;
             top: 0;
@@ -72,7 +71,6 @@
             transform: translateY(-3px) scale(1.05);
         }
 
-        /* HERO */
         .hero {
             position: relative;
             height: 520px;
@@ -240,10 +238,7 @@
 
     <!-- TOP BAR -->
     <div class="topbar">
-
-        <!-- ✅ CLICKABLE LOGO FIX -->
         <img src="logo.jpg" class="logo-small" alt="Logo" onclick="goHome()">
-
         <div class="flags">
             <img src="https://flagcdn.com/48x36/gr.png" onclick="switchLang('el')" alt="Greek">
             <img src="https://flagcdn.com/48x36/gb.png" onclick="switchLang('en')" alt="English">
@@ -253,15 +248,12 @@
     <!-- HERO -->
     <section class="hero">
         <img src="logo-horizontal.jpeg" alt="Construction">
-
         <div class="hero-overlay">
             <h1>AM & AR Construction LTD</h1>
-
             <p>
                 Professional construction, renovations and technical solutions
                 with reliability, quality and consistency.
             </p>
-
             <div class="hero-line"></div>
         </div>
     </section>
@@ -286,14 +278,14 @@
                 <div class="icon">🏢</div>
                 <h3>About Us</h3>
                 <p>Learn more about our company</p>
-                <a href="about.html">More →</a>
+                <a href="about-en.html">More →</a>
             </div>
 
             <div class="box">
                 <div class="icon">🏗️</div>
                 <h3>Projects</h3>
                 <p>View our completed projects</p>
-                <a href="projects.html">View →</a>
+                <a href="projects-en.html">View →</a>
             </div>
 
         </div>
@@ -307,27 +299,10 @@
         </div>
 
         <div class="service-grid">
-
-            <div class="service">
-                <span>🏗️</span>
-                Construction
-            </div>
-
-            <div class="service">
-                <span>🏠</span>
-                Renovations
-            </div>
-
-            <div class="service">
-                <span>🔨</span>
-                Repairs
-            </div>
-
-            <div class="service">
-                <span>📐</span>
-                Design & Planning
-            </div>
-
+            <div class="service"><span>🏗️</span>Construction</div>
+            <div class="service"><span>🏠</span>Renovations</div>
+            <div class="service"><span>🔨</span>Repairs</div>
+            <div class="service"><span>📐</span>Design & Planning</div>
         </div>
 
     </section>
@@ -342,7 +317,7 @@
 
     <script>
         function goHome() {
-            window.location.href = 'index.html';
+            window.location.href = 'index-en.html';
         }
 
         function switchLang(lang) {
